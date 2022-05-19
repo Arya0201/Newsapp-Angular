@@ -15,45 +15,12 @@ export class NavbarComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.http.TcHeadLines().subscribe(data=>{
-      this.topheadlinedata=data.articles; 
-      this.passdata.emit(this.topheadlinedata); 
-     })
+   this.Onpass('general');
   }
-  Ontech(){
-    this.http.Tctechnology().subscribe(data=>{
+  Onpass(data:any){
+    this.http.getNews(data).subscribe((data:any)=>{
      this.topheadlinedata=data.articles; 
      this.passdata.emit(this.topheadlinedata); 
     })
-  }
-  Onsport(){
-    this.http.Tcsports().subscribe(data=>{
-     this.topheadlinedata=data.articles; 
-     this.passdata.emit(this.topheadlinedata); 
-    })
-  }
-  Onscience(){
-    this.http.Tcscience().subscribe(data=>{
-      this.topheadlinedata=data.articles; 
-      this.passdata.emit(this.topheadlinedata); 
-     })
-  }
-  Onhealth(){
-    this.http.Tchealth().subscribe(data=>{
-      this.topheadlinedata=data.articles; 
-      this.passdata.emit(this.topheadlinedata); 
-     })
-  }
-  Onentertainment(){
-    this.http.Tcentertainment().subscribe(data=>{
-      this.topheadlinedata=data.articles; 
-      this.passdata.emit(this.topheadlinedata); 
-     })
-  }
-  onbusiness(){
-    this.http.Tcbusiness().subscribe(data=>{
-      this.topheadlinedata=data.articles; 
-      this.passdata.emit(this.topheadlinedata); 
-     })
   }
 }
