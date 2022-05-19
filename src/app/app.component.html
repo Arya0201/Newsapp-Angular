@@ -1,38 +1,21 @@
-<nav style="background-color:  #8b48f7;" class="navbar navbar-expand-lg bg- ">
-  <div class="container-fluid">
-    <p class="navbar-brand">KHABARI NEWS</p>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link a active" aria-current="page"routerLinkActive="activated" routerLink="/business">Business</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link b active" aria-current="page" routerLinkActive="activated" routerLink="/entertainment">Entertainment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link c active" aria-current="page"  routerLinkActive="activated" routerLink="/health">Health</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d active" aria-current="page" routerLinkActive="activated" routerLink="/science">Science</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link e active" aria-current="page" routerLinkActive="activated" routerLink="/sports">Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link f active" aria-current="page"routerLinkActive="activated" routerLink="/technology">Technology</a>
-        </li>
-      </ul>
-      
-    </div>
-  </div>
-</nav>
+<app-navbar (passdata)="pass($event)"></app-navbar>
 <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar>
+
 <div class="container">
-<router-outlet></router-outlet>
+<div class="container-fluid mp-3">
+  <div class="row mt-3 ">
+      <div class="col-lg-3 m-2" *ngFor="let list of topheadlinedata"  style="width: 18rem;">
+          <div class="box">
+          <img src="{{list.urlToImage}}" class="card-img-top" width="100%" alt="...">
+          <h5 class="card-title mt-3 mb-3">{{list.title}}</h5>
+          <p class="card-text">{{list.description}}</p>
+          <a href="{{list.url}}" target="_blank" class="btn btn-primary">Read More</a>
+      </div>
+      </div>  
+  </div>
+  </div>
 </div>
+
 <footer>
   <p class="text-center" style="font-weight: bold;">
     &copy; & &reg; by KHABARI SAMACHAR 2022
