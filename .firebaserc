@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "khabrinews": {
+      "hosting": {
+        "payment-gateway": [
+          "khabrinews"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "khabrinews"
+  }
+}
